@@ -1,23 +1,32 @@
-function unique_id = create_unique_id(faces_map)
-    
-    % find maximum ID number
-    max_id = 2 ^ 12;
-    while max_id < size(faces_map, 1) / 2
-        max_id = max_id * 2;
-    end
+load ../faces/
 
-    % find random, unused ID number
-    id = random('Uniform', 0, max_id);
-    while ~ isKey(faces_map, id)
-        id = random('Uniform', 0, max_id);
-    end
+faces = zeros(n*6,m*6);
 
-    unique_id = id;
 
-    clear max_id id;
+
+
+function create_new_entry(personal_map, eigenweights_map, new_name, new_eigen_weights)
+    unique_key = [keys.personal, keys.eigenweights];
+    personal = personal_map;
+    eigenweights = eigenweights_map;
+
+    return unique_key;
+end;
+
+some_array = [];
+function add_person(name,weights);
+count = 1;
+for i = 1:personal.length;
+    for j = 1:eigenweights.length;%Loop through each map to 
+    somearray.add(create_new_entry(personal,eigenweights,personal{i},eigenweights{j}));
+    count = count + 1;
+    %Creates a new entry for each person
+    end;
+end;
+return somearray;
 end
 
-function id = create_new_entry(faces_map, name, weights)
-    personal_map = containers.Map({"name", "weights"}, {name, weights});
-    add(faces_map, create_unique_id(faces_map), personal_map)
-end
+for x = 1:personal.length;
+    add_person(personal{x},W);
+    count = count + 1;
+end;
