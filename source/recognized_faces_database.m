@@ -8,8 +8,6 @@ eigenweights;
 
 [U,S,V] = svd(faces,'econ');
 
-%%https://www.mathworks.com/help/matlab/matlab_prog/creating-a-map-object.html
-
 W = U'*x;
 count = 1
 for r = [25 50 100 200 400 800 1600];%Go through each rank for each image 
