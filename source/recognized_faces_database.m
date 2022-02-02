@@ -3,20 +3,6 @@ load ../faces/
 faces = zeros(n*6,m*6);
 
 
-personal;
-eigenweights;
-
-[U,S,V] = svd(faces,'econ');
-
-W = U'*x;
-count = 1
-for r = [25 50 100 200 400 800 1600];%Go through each rank for each image 
-    personal = containers.Map({0,1,2,3,4,5,6,7,8,9,10},{ 'Eshann', 'Kwame', 'Adrian', 'Juliana', 'Jake', 'Jane', 'Aleks', 'Alex CC', 'Mostafa', 'Rahul','Mr C'});
-    eigenweights = containers.Map({0,1,2,3,4,5,6,7,8,9,10},{U(:,1:r)*U(:,1:r)'*x});
-    count = count + 1;
-
-end;
-
 
 
 function create_new_entry(personal_map, eigenweights_map, new_name, new_eigen_weights)
