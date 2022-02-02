@@ -14,6 +14,8 @@ function unique_id = create_unique_id(faces_map)
 
     unique_id = id;
 
+    clear max_id id;
+
 end
 
 function id = create_new_entry(faces_map, name, weights)
