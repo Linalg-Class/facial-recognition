@@ -13,5 +13,4 @@ function result = compare_weights(weights1, weights2, epsilon1, epsilon2)
         result = -1;
     end
 
-    clear distance;
 end

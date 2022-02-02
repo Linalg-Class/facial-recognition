@@ -8,6 +8,8 @@ function randomized = randomize_columns(A, numcols) %this function will take in 
     p = randperm(size(A,2)); % random list of columns 
     Anew = A(:, p) ; % reorganize A in the new order of columns
     randomized = Anew(:, 1:numcols) %uses only a certain percentage of the columns of Anew
+
+    clear cols p Anew;
 end
 
 function [eigenfaces, avgface] = create_training_eigenfaces(dataset, numcols, ranks)

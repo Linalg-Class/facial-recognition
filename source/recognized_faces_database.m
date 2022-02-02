@@ -16,12 +16,12 @@ function unique_id = create_unique_id(faces_map)
 
     unique_id = id;
 
-    clear max_id id;
 end
 
 function id = create_new_entry(faces_map, name, weights)
     personal_map = containers.Map({"name", "weights"}, {name, weights});
-    add(faces_map, create_unique_id(faces_map), personal_map)
+    id = create_unique_id(faces_map);
+    add(faces_map, id, personal_map);
 end
 
 function id = find_minimum_weight_distance(weights, faces_map)
@@ -39,5 +39,4 @@ function id = find_minimum_weight_distance(weights, faces_map)
 
     id = min_id;
 
-    clear min_id min_distance k_info distance;
 end
