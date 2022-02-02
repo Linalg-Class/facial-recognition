@@ -1,6 +1,4 @@
-function w = find_weight (row) %Function to be implemented when data set is available 
-    w = "Fill This In";
-end
+
 function c = compare(thisWeight, newimg_weight, constant)%Compares the weight of a face with another.
     diff = norm(newimg_weight - thisWeight);%subtracts thisWeight from newimg_weight
     if diff <= constant%Sees if this is below the set constant.
