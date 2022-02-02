@@ -8,7 +8,7 @@ function unique_id = create_unique_id(faces_map)
 
     % find random, unused ID number
     id = random('Uniform', 0, max_id);
-    while not isKey(faces_map, id)
+    while ~ isKey(faces_map, id)
         id = random('Uniform', 0, max_id);
     end
 
