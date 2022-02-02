@@ -10,7 +10,7 @@ function randomized = randomize_columns(A, numcols) %this function will take in 
     randomized = Anew(:, 1:numcols) %uses only a certain percentage of the columns of Anew
 end
 
-function [eigenfaces avgface] = create_training_eigenfaces(dataset, numcols, ranks)
+function [eigenfaces, avgface] = create_training_eigenfaces(dataset, numcols, ranks)
     random_data = randomize_columns(dataset, numcols);
     avgface = mean(random_data, 2);
     
