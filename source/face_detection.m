@@ -5,7 +5,9 @@ function result = find_faces_func(imgg, n, m)
 
     if bbox_sz1 ~= 0
         cropped = imcrop(imgg, bbox(bbox_sz1, :));
-        resized = imresize(cropped, [n m]);
+        if size(cropped, 1) > n & size(cropped, 2) > m
+            resized = imresize(cropped, [n m]);
+        end
         result = reshape(resized, 1, [])';
     else
         result = [];
